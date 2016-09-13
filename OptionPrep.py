@@ -1,9 +1,9 @@
 #https://www.quantstart.com/articles/European-Vanilla-Call-Put-Option-Pricing-with-Python
 
 from math import log, pi, exp
+from enum import Enum
 
-def d_j(j, S, K, r, v, T):
-    return (log(S/K) + (r + ((-1)**(j-1))*0.5*v*v)*T)/(v*(T**0.5))
+OptionType = Enum('OptionType', 'Call Put')
 
 def norm_cdf(x):
     #An approximation to the cumulative distribution function for the standard normal distribution:

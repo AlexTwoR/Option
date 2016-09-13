@@ -22,7 +22,7 @@ def vanilla_option_price(S, K, r, v, T, Otype):
     
     
 #----- Greeks -----
-
+def 
 
 
 
