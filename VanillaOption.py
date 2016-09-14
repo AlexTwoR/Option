@@ -2,7 +2,6 @@ import OptionPrep as sto
 from math import exp, log, sqrt
 from OptionPrep import OptionType
 
-
 class VanillaOption:
     def __init__(self, S, K, r, v, T, Otype):
         self.S=S
