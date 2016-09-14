@@ -6,8 +6,8 @@ from OptionPrep import OptionType
 #Define option parameters
 S=100.0
 K=100.0
-r=0.05
-v=0.1
+r=0.1
+v=0.3
 T=365.0/365.0
 Otype=OptionType.Call
 
@@ -26,7 +26,7 @@ option.Gamma()
 prices = np.arange(100)+50.0 
 values=np.zeros(len(prices))
 
-#Culc values
+#Calc values
 for p in prices:
     bufOpt=vo.VanillaOption(p, K, r, v, T, Otype)
     values[p-np.int(prices[0])]=bufOpt.Gamma()
