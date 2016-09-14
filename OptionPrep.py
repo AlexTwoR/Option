@@ -1,10 +1,8 @@
-#https://www.quantstart.com/articles/European-Vanilla-Call-Put-Option-Pricing-with-Python
-
-from math import log, pi, exp
 from enum import Enum
 
 #Define the types of option
 OptionType = Enum('OptionType', 'Call Put')
+ExerciseType = Enum('OptionType', 'European American')
 
 
 class Option:
@@ -21,6 +19,8 @@ class Option:
         .format(self.S,self.K,self.r,self.v,self.T)
         
 
+
+"""
 #Probability density
 def norm_cdf(x):
     #An approximation to the cumulative distribution function for the standard normal distribution:
@@ -37,3 +37,4 @@ def norm_cdf(x):
 def norm_pdf(x):
     #Standard normal probability density function
     return (1.0/((2*pi)**0.5))*exp(-0.5*x*x)
+"""

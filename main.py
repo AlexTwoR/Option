@@ -2,6 +2,7 @@ import VanillaOption as vo
 import numpy as np
 import matplotlib.pylab as plt
 from OptionPrep import OptionType
+from AmericanOption import AmericanOption
 
 #Define option parameters
 S=100.0
@@ -12,9 +13,18 @@ T=365.0/365.0
 Otype=OptionType.Call
 
 #Define option     
-option=vo.VanillaOption(S, K, r, v, T, Otype)
+#option=vo.VanillaOption(S, K, r, v, T, Otype)
+option=AmericanOption(S, K, r, v, T, Otype)
 
 #Get price and Greeks
+
+#--- Testing ---
+option.setNumberOfNodes(20)
+rooo=option.price()
+
+plt.plot(rooo[:,19])
+#------
+
 option.price()
 option.Delta()
 option.Gamma()

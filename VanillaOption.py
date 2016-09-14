@@ -1,4 +1,6 @@
-import OptionPrep as sto
+#https://www.quantstart.com/articles/European-Vanilla-Call-Put-Option-Pricing-with-Python
+
+import Statistic as sto
 from math import exp, log, sqrt
 from OptionPrep import OptionType, Option
 
@@ -26,7 +28,8 @@ class VanillaOption(Option):
         #Part of price calculating
         return (log(self.S/self.K) + (self.r + ((-1)**(j-1))*0.5*self.v*self.v)*self.T)\
                 /(self.v*(self.T**0.5))
-            
+    
+    #--- Greeks ---        
     def Delta(self):
         if(self.Optype==OptionType.Call): 
             z=1
@@ -36,3 +39,5 @@ class VanillaOption(Option):
         
     def Gamma(self):
         return sto.norm_pdf(self._d_j(1))/(self.S*self.v*(self.T**0.5))
+        
+    
