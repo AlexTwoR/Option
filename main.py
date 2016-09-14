@@ -19,6 +19,8 @@ option.price()
 option.Delta()
 option.Gamma()
 
+option
+
 
 #--- Option plot ---
 

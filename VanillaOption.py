@@ -1,8 +1,10 @@
 import OptionPrep as sto
 from math import exp, log, sqrt
-from OptionPrep import OptionType
+from OptionPrep import OptionType, Option
 
-class VanillaOption:
+
+class VanillaOption(Option):
+    """
     def __init__(self, S, K, r, v, T, Otype):
         self.S=S
         self.K=K
@@ -10,6 +12,7 @@ class VanillaOption:
         self.v=v
         self.T=T
         self.Optype=Otype
+    """
     
     def price(self):
         if(self.Optype==OptionType.Call):
