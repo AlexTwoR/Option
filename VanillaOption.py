@@ -9,15 +9,15 @@ class VanillaOption(Option):
 
     def price(self):
         if(self.Optype==OptionType.Call):
-            return self.S*sto.norm_cdf(self._d_j(1))\
+            return self.S*sto.norm_cdf(self._d_j(1)) \
                 -self.K*exp(-self.r*self.T) * sto.norm_cdf(self._d_j(2))
         else:
-            return -self.S*sto.norm_cdf(-self._d_j(1))\
+            return -self.S*sto.norm_cdf(-self._d_j(1)) \
             +self.K*exp(-self.r*self.T) * sto.norm_cdf(-self._d_j(2))
             
     def _d_j(self,j):
         #Part of price calculating
-        return (log(self.S/self.K) + (self.r + ((-1)**(j-1))*0.5*self.v*self.v)*self.T)\
+        return (log(self.S/self.K) + (self.r + ((-1)**(j-1))*0.5*self.v*self.v)*self.T) \
                 /(self.v*(self.T**0.5))
     
     #--- Greeks ---        
