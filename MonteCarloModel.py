@@ -15,9 +15,12 @@ class MonteCarloModel(Option):
     
     def price(self):
         
+        #The adjustment to the spot price 
         S_adj = self.S * exp(self.T*(self.r-0.5*(self.v**2)))
-        payoff_sum = 0.0
-         
+        
+        payoff_sum = 0.0 
+        
+        #MC Simulation
         for i in range(0,self.num_sims):
             gauss_bm = np.random.randn()
             S_cur = S_adj *exp(sqrt(self.T)*self.v*gauss_bm)

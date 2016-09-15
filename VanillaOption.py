@@ -8,6 +8,8 @@ from OptionPrep import OptionType, Option
 class VanillaOption(Option):
 
     def price(self):
+        
+        #Black-Scholes
         if(self.Optype==OptionType.Call):
             return self.S*sto.norm_cdf(self._d_j(1)) \
                 -self.K*exp(-self.r*self.T) * sto.norm_cdf(self._d_j(2))
