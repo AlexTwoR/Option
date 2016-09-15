@@ -6,16 +6,7 @@ from OptionPrep import OptionType, Option
 
 
 class VanillaOption(Option):
-    """
-    def __init__(self, S, K, r, v, T, Otype):
-        self.S=S
-        self.K=K
-        self.r=r
-        self.v=v
-        self.T=T
-        self.Optype=Otype
-    """
-    
+
     def price(self):
         if(self.Optype==OptionType.Call):
             return self.S*sto.norm_cdf(self._d_j(1))\

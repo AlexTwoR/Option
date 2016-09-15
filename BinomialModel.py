@@ -1,9 +1,10 @@
 import numpy as np
 import Statistic as sto
-from math import exp, log, sqrt
-from OptionPrep import OptionType, Option
 
-class AmericanOption(Option):
+from math import exp, log, sqrt
+from OptionPrep import OptionType, ExerciseType, Option
+
+class BinomialModel(Option):
     
     numberOfNodes = 10
     divR=0

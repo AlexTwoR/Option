@@ -1,8 +1,9 @@
-import VanillaOption as vo
 import numpy as np
 import matplotlib.pylab as plt
+
 from OptionPrep import OptionType
-from AmericanOption import AmericanOption
+from BinomialModel import BinomialModel
+from VanillaOption import VanillaOption
 
 #Define option parameters
 S=100.0
@@ -13,8 +14,9 @@ T=365.0/365.0
 Otype=OptionType.Call
 
 #Define option     
-#option=vo.VanillaOption(S, K, r, v, T, Otype)
-option=AmericanOption(S, K, r, v, T, Otype)
+#option = VanillaOption(S, K, r, v, T, Otype)
+option = BinomialModel(S, K, r, v, T, Otype)
+
 
 #Get price and Greeks
 
@@ -32,11 +34,11 @@ option.Gamma()
 option
 
 
-#--- Option plot ---
+#--- Option Sensitivity plot ---
 
 #Define x aix
 prices = np.arange(100)+50.0 
-values=np.zeros(len(prices))
+values = np.zeros(len(prices))
 
 #Calc values
 for p in prices:
