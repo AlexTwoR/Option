@@ -22,10 +22,7 @@ class VanillaOption(Option):
     
     #--- Greeks ---        
     def Delta(self):
-        if(self.Optype==OptionType.Call): 
-            z=1
-        else: 
-            z=-1
+        z=1 if self.Optype==OptionType.Call else -1
         return (z*exp(-self.r*self.T) * sto.norm_cdf(z*self._d_j(1)))
         
     def Gamma(self):

@@ -11,27 +11,20 @@ K=100.0
 r=0.1
 v=0.3
 T=365.0/365.0
-Otype=OptionType.Call
+Otype=OptionType.Put
 
 #Define option     
-#option = VanillaOption(S, K, r, v, T, Otype)
-option = BinomialModel(S, K, r, v, T, Otype)
+option_bs = VanillaOption(S, K, r, v, T, Otype)
+option_bin = BinomialModel(S, K, r, v, T, Otype)
 
 
 #Get price and Greeks
+option_bin.setNumberOfNodes(2000)
+print(option_bs.price())
+print(option_bin.price())
 
-#--- Testing ---
-option.setNumberOfNodes(20)
-rooo=option.price()
-
-plt.plot(rooo[:,19])
-#------
-
-option.price()
 option.Delta()
 option.Gamma()
-
-option
 
 
 #--- Option Sensitivity plot ---

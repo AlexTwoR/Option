@@ -16,6 +16,6 @@ class Option:
     
     def __repr__(self):
         return "Spot: {0}\nStrike: {1}\nRate: {2}\nVoltility: {3}\nTime: {4}"\
-        .format(self.S,self.K,self.r,self.v,self.T)
+                .format(self.S,self.K,self.r,self.v,self.T)
         
 
